@@ -52,7 +52,7 @@ export default class IncomeEntries extends React.Component {
                 type='text'
                 className='form-control'
                 id='income-description'
-                value={ description }
+                defaultValue={ description }
                 onChange={ this.handleDescriptionInput }
               />
             </div>
@@ -64,7 +64,7 @@ export default class IncomeEntries extends React.Component {
                   type='text'
                   className='form-control'
                   id='income-amount'
-                  value={ amount }
+                  defaultValue={ amount }
                   onChange={ this.handleAmountInput }
                 />
               </div>
@@ -84,11 +84,12 @@ export default class IncomeEntries extends React.Component {
               </thead>
               <tbody>
                 {
-                  lineItems.map((lineItem, index) => (
-                    <tr>
+                  lineItems.map(lineItem => (
+                    <tr key={lineItem.description}>
                       <td>{ lineItem.description }</td>
                       <td>${ lineItem.amount.toFixed(2) }</td>
                     </tr>
+                    
                   ))
                 }
               </tbody>
