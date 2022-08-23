@@ -19,7 +19,7 @@ jobs:
     steps:
       - heroku/deploy-via-git:
           api-key: $HEROKU_API_KEY
-          app-name: hannah-healy-portfolio
+          app-name: budget-tracker-redux-hfh
           branch: main
 
 workflow:
